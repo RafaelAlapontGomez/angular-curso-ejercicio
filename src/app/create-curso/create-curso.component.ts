@@ -40,7 +40,6 @@ export class CreateCursoComponent implements OnInit {
       numHoras: ['']    
     })
 
-    this.curso = {}
     this.reloadData();
   }
 
