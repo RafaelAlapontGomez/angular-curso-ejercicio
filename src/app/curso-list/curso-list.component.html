@@ -1,0 +1,28 @@
+<p>list-curso works!</p>
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Catalogo de Cursos</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Titulo</th>
+            <th>Profesor</th>
+            <th>Nivel</th>
+            <th>Horas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let curso of cursos | async">
+            <td>{{curso.titulo}}</td>
+            <td>{{curso.profesor}}</td>
+            <td>{{curso.nivel}}</td>
+            <td>{{curso.numHoras}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

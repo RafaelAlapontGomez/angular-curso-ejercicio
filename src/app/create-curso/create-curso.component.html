@@ -1,0 +1,42 @@
+<p>create-curso works!</p>
+
+<div>
+    <h1>Añadir Curso</h1>
+    <form [formGroup]="cursoForm" (ngSubmit)="submitForm()" novalidate>
+
+        <div class="form-group">
+            <label>Activo</label>
+            <input type="checkbox" formControlName="activo" class="form-control">
+        </div>
+        
+        <div>
+            <label for="profesores">Profesor</label>
+            <select formControlName="profesorId" id="profesores">
+                <option *ngFor="let profesor of profesores | async; let i = index" [value]="profesor.id">
+                    {{profesor.profesor}}
+                </option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Titulo</label>
+            <input type="text" formControlName="titulo" class="form-control" maxlength="100">
+        </div>
+
+        <div>
+            <label for="niveles">Nivel</label>
+            <select formControlName="nivel" id="niveles">
+                <option *ngFor="let nivel of niveles | async; let i = index" [value]="nivel.nivel">
+                    {{nivel.nivel}}
+                </option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Horas</label>
+            <input type="text" formControlName="numHoras" class="form-control" maxlength="10">
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>        

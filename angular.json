@@ -92,9 +92,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           }
         },
         "lint": {
@@ -123,6 +127,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular9-springboot-cursos"
+    }
+  },
+  "defaultProject": "angular9-springboot-cursos",
+  "cli": {
+    "analytics": "31dcf3bf-84ec-4b22-a168-a667d904ddd1"
+  }
 }
