@@ -1,25 +1,40 @@
-<div class="panel panel-primary">
-    <div class="panel-heading">
-      <h2>Catalogo de Cursos</h2>
-    </div>
-    <div class="panel-body">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Titulo</th>
-            <th>Profesor</th>
-            <th>Nivel</th>
-            <th>Horas</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let curso of cursos | async">
-            <td>{{curso.titulo}}</td>
-            <td>{{curso.profesor}}</td>
-            <td>{{curso.nivel}}</td>
-            <td>{{curso.numHoras}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+
+<!-- app.component.html -->
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="titulo">
+    <mat-header-cell *matHeaderCellDef> Titulo </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.titulo}} </mat-cell>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="profesor">
+    <mat-header-cell *matHeaderCellDef> Profesor </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.profesor}} </mat-cell>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="nivel">
+    <mat-header-cell *matHeaderCellDef> Nivel </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.nivel}} </mat-cell>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="numHoras">
+    <mat-header-cell *matHeaderCellDef> Horas </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.numHoras}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+<mat-paginator
+  [pageSizeOptions]="[1, 2, 3]"
+  showFirstLastButtons
+></mat-paginator>
