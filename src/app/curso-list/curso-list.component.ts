@@ -43,8 +43,4 @@ export class CursoListComponent implements OnInit {
     });
   }
 
-  reloadData() {
-    this.cursoService.getCursoList().subscribe(results => this.cursosArr = results);
-
-  }
 }

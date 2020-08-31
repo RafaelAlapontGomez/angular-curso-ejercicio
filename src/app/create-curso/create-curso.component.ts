@@ -22,6 +22,7 @@ export class CreateCursoComponent implements OnInit {
   profesores: Observable<Profesor[]>;
   niveles: Observable<Nivel[]>;
   curso: Curso;
+  mensaje: string;
 
   constructor(
     public cursoService: CursoService, 
@@ -62,7 +63,7 @@ export class CreateCursoComponent implements OnInit {
     };
 
     this.cursoService.createCurso(this.curso).subscribe(res => {
-      console.log('Curso created!');
+      console.log("Curso creado correctamente");
       this.router.navigateByUrl('cursos');
     })
   }
